@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formCompra");
   const resultado = document.getElementById("resultado");
 
-  // ✅ Cargar productos desde JSON
   fetch("data/productos.json")
     .then(res => res.json())
     .then(data => {
@@ -14,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
       cargarOpciones(productos);
     });
 
-  // ✅ Mostrar opciones en el select
   function cargarOpciones(productos) {
     productos.forEach(prod => {
       const option = document.createElement("option");
@@ -24,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ Escuchar envío del formulario
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarCompra(compra);
   });
 
-  // ✅ Mostrar resumen en el HTML
   function mostrarCompra(compra) {
     resultado.innerHTML = `
       <h3 class="mt-4">Resumen de la Compra</h3>
@@ -72,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ Si ya hay compras, mostrar la última
   if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
     mostrarCompra(carrito[carrito.length - 1]);
