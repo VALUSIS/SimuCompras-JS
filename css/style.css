@@ -1,0 +1,22 @@
+body {
+  background-image: url("../images/fondo.jpg"); /* o cualquier imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+h1, p {
+  color: #333;
+}
