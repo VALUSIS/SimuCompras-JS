@@ -73,3 +73,5 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarCompra(carrito[carrito.length - 1]);
   }
 });
+
+//Esta es toda la base JS del simulador y que se conecta con el JSON// 
