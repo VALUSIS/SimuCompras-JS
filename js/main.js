@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!productoSeleccionado || isNaN(cantidad) || cantidad <= 0) {
       Toastify({
-  text: "❌ Error: Ingresá un producto y cantidad válida",
-  duration: 3000,
-  gravity: "top",
-  position: "center",
-  backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
-}).showToast();
+                text: "❌ Error: Ingresá un producto y cantidad válida",
+                duration: 3000,
+                gravity: "top",
+                position: "center",
+               backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
+             }).showToast();
       return;
     }
 
@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
   Toastify({
     text: `✅ ¡Compra agregada! Total: $${compra.total}`,
     duration: 3000,
-    gravity: "top", // "top" o "bottom"
-    position: "right", // "left", "center" o "right"
+    gravity: "top", 
+    position: "right", 
     backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
     stopOnFocus: true
   }).showToast();
