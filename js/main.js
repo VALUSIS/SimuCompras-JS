@@ -32,7 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const productoSeleccionado = productos.find(p => p.id === productoID);
 
     if (!productoSeleccionado || isNaN(cantidad) || cantidad <= 0) {
-      Swal.fire("Error", "Ingresá un producto y cantidad válida", "error");
+      Toastify({
+  text: "❌ Error: Ingresá un producto y cantidad válida",
+  duration: 3000,
+  gravity: "top",
+  position: "center",
+  backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
+}).showToast();
       return;
     }
 
@@ -52,21 +58,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function mostrarCompra(compra) {
-    resultado.innerHTML = `
-      <h3 class="mt-4">Resumen de la Compra</h3>
-      <p><strong>Cliente:</strong> ${compra.cliente}</p>
-      <p><strong>Producto:</strong> ${compra.producto}</p>
-      <p><strong>Cantidad:</strong> ${compra.cantidad}</p>
-      <p><strong>Total:</strong> $${compra.total}</p>
-    `;
+  resultado.innerHTML = `
+    <h3 class="mt-4">Resumen de la Compra</h3>
+    <p><strong>Cliente:</strong> ${compra.cliente}</p>
+    <p><strong>Producto:</strong> ${compra.producto}</p>
+    <p><strong>Cantidad:</strong> ${compra.cantidad}</p>
+    <p><strong>Total:</strong> $${compra.total}</p>
+  `;
 
-    Swal.fire({
-      title: "¡Compra agregada!",
-      text: `Total: $${compra.total}`,
-      icon: "success",
-      confirmButtonText: "Aceptar"
-    });
-  }
+  Toastify({
+    text: `✅ ¡Compra agregada! Total: $${compra.total}`,
+    duration: 3000,
+    gravity: "top", // "top" o "bottom"
+    position: "right", // "left", "center" o "right"
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+    stopOnFocus: true
+  }).showToast();
+}
 
   if (localStorage.getItem("carrito")) {
     carrito = JSON.parse(localStorage.getItem("carrito"));
