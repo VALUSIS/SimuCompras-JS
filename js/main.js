@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     text: `✅ ¡Compra agregada! Total: $${compra.total}`,
     duration: 3000,
     gravity: "top", 
-    position: "right", 
+    position: "center", 
     backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
     stopOnFocus: true
   }).showToast();
